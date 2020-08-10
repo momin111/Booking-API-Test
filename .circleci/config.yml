@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  newman-collection-run:
+    docker:
+    - image: postman/newman:5.1.2
+    steps:
+    - checkout
+    - run:
+        command: "newman run ./Restful Booker.postman_collection.json\n"
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - newman-collection-run
+    
